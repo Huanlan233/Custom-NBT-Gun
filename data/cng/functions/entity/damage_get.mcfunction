@@ -1,7 +1,7 @@
 # 检测被击中的人
 execute as @e[scores={cng.hurttime=1..}] store success score @s cng.be_hit run effect clear @s invisibility
 execute as @e[scores={cng.be_hit=1..}] run tag @s add cng.be_hit
-execute as @e[tag=cng.be_hit] store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id:1b}].Duration 10
+execute as @e[tag=cng.be_hit] store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id:1b}].Duration 100
 
 # 中弹自定义事件
 execute as @e[tag=cng.be_hit] at @s run function #cng:damage_get

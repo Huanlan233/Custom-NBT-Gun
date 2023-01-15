@@ -5,11 +5,10 @@ tellraw @a {"text": "[Custom NBT Gun] 已加载。"}
 scoreboard objectives add cng.used used:carrot_on_a_stick
 # IsGun 检测是否手持物品为枪
 scoreboard objectives add cng.isgun dummy
-# Damage 枪的伤害
-scoreboard objectives add cng.damage dummy
-
 
 # Entity
+# AmmoTypeID 子弹类型ID,决定了射出的是何种子弹
+scoreboard objectives add cng.ammoid dummy
 # GetDamage 实体受到的伤害
 scoreboard objectives add cng.get_damage dummy
 # BeHit 检测是否中弹
