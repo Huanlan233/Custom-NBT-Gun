@@ -1,4 +1,4 @@
-tellraw @a {"text": "[Custom NBT Gun] 已卸载。"}
+tellraw @a {"text": "[Custom NBT Gun] 已卸载，请及时删除数据包文件。"}
 
 # Item
 # Used 枪使用检测
