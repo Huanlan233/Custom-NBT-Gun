@@ -11,4 +11,3 @@ execute if data entity @s[scores={cng.istrueammo=0}] Inventory[{Slot:1b}].tag.Cn
 execute if data entity @s[scores={cng.istrueammo=0,cng.ammocount=1}] Inventory[{Slot:0b}].tag.CngAmmoNBT.id run item replace entity @s container.0 with air
 #
 execute if data entity @s[scores={cng.istrueammo=0}] Inventory[{Slot:1b}].tag.CngAmmoNBT.id run tag @s remove cng.ammocost
-
