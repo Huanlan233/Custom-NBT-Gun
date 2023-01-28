@@ -1,11 +1,11 @@
 # NBTs
 function cng:nbts
 # 检测玩家使用枪
-function cng:player/gun_used
+function cng:events/player/gun_used
 # 召唤子弹
-function cng:entity/bullet_summon
+function cng:events/entity/bullet_summon
 # 受到伤害
-function cng:entity/damage_get
+function cng:events/entity/damage_get
 
 
 # 清除已经落地的子弹
