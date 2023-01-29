@@ -34,3 +34,10 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100}}
 give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
+
+## TODO
+
+[ ] 实现消耗自定义子弹功能(已实现，还有BUG)
+[ ] 实现换弹功能
+[ ] 自定义后坐力
+[ ] More...
