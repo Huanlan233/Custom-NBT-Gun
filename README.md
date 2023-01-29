@@ -6,16 +6,18 @@
 ## 快速上手
 
 目前提供了3个可自定义的参数
+
+枪械可自定义的NBT
 ```JSON
-// 枪械可自定义的NBT
 "CngNBT":{
-    "Damage": 100, // Int
-    "AmmoID": "Default" // Str
+    "Damage": 100,
+    "AmmoID": "Default"
 }
 
-// 子弹可自定义的NBT
+子弹可自定义的NBT
+```JSON
 "CngAmmoNBT":{
-    "ID": "Default" // Str
+    "ID": "Default"
 }
 ```
 
@@ -24,7 +26,8 @@
 give @s carrot_on_a_stick{CngNBT:{Damage:100}}
 ```
 
-给予自己一个伤害为100且使用子弹ID为Default的枪械
+给予自己一个伤害为100且使用子弹ID为Default的枪械，并给予配套子弹
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
+give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
