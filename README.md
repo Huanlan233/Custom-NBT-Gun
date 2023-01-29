@@ -1,6 +1,6 @@
 # Custom NBT GUN
 
-<h1>BETA!!! Don't use it!</h1>
+***BETA!!! Don't use it!***
 一款自定义枪械数据包
 
 ## 快速上手
