@@ -22,6 +22,8 @@
 }
 ```
 
+## 示例
+
 给予自己一个伤害为100的枪械
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100}}
