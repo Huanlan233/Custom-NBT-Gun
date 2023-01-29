@@ -13,6 +13,7 @@
     "Damage": 100,
     "AmmoID": "Default"
 }
+```
 
 子弹可自定义的NBT
 ```JSON
