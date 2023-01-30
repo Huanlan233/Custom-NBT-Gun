@@ -1,4 +1,4 @@
-execute store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id:20b}].Duration 100
+execute store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id: 20b}].Duration 100
 # 中弹自定义事件
 execute at @s run function #cng:damage_get
 # 扣血，此处使用Custom Damage
