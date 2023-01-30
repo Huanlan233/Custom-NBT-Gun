@@ -1,3 +1,6 @@
+# 受伤时间
+execute as @e store result score @s cng.hurttime run data get entity @s HurtTime
+
 execute store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id:1b}].Duration 100
 
 # 中弹自定义事件

@@ -23,7 +23,18 @@ scoreboard objectives add cng.vecy dummy
 scoreboard objectives add cng.vecz dummy
 # SlotAmmoCount 栏位子弹数量
 scoreboard objectives add cng.ammocount dummy
-
+scoreboard objectives add cng.ammocount2 dummy
+# NeedAmmo
+scoreboard objectives add cng.needammo dummy
+scoreboard objectives add cng.needammo2 dummy
+# MaxAmmo
+scoreboard objectives add cng.maxammo dummy
+# HaveAmmo
+scoreboard objectives add cng.haveammo dummy
+# IsTrueAmmo
+scoreboard objectives add cng.istrueammo dummy
+# SurplusAmmo
+scoreboard objectives add cng.surplusammo dummy
 
 # Constant 常数
 scoreboard objectives add cng.constant dummy

@@ -1,7 +1,9 @@
 # 检测玩家是否使用枪
+execute as @a store result score @s cng.isgun run data get entity @s SelectedItem.tag.CngNBT
 execute as @a[scores={cng.used=1..}] if score @s cng.isgun matches 1.. run tag @s add cng.gun_used
 
-# 消耗子弹
-execute as @a[tag=cng.gun_used] at @s run function cng:events/player/ammo_cost
+# 换弹
+execute as @a if data entity @s Inventory[{Slot:-106b}].tag.CngNBT run tag @s add cng.reloading
+execute as @a[tag=cng.reloading] run function cng:events/player/reload
 # 召唤子弹
 execute as @a[tag=cng.gun_used] run function cng:events/player/bullet_summon
