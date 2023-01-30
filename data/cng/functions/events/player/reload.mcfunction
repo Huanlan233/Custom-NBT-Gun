@@ -1,5 +1,4 @@
-# TODO:
-# 换弹功能实现
+# F换弹
 
 item replace entity @s weapon.mainhand from entity @s weapon.offhand
 item replace entity @s weapon.offhand with air
