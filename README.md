@@ -37,7 +37,12 @@ give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 
 ## TODO
 
-- [ ] 实现消耗自定义子弹功能(已实现，还有BUG)
-- [ ] 实现换弹功能
+- [x] 实现消耗自定义子弹功能
+- [x] 实现换弹功能
 - [ ] 自定义后坐力
 - [ ] More...
+
+## Bugs
+
+- [ ] 当NeedAmmo(MaxAmmo - HaveAmmo)为65时会少消耗一颗子弹
+- [ ] 最大换弹数量127(可能不算BUG)
