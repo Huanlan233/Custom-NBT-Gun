@@ -6,8 +6,14 @@
 
 *所有tag、计分板、命令空间均已加上cng前缀(防冲突)*
 
+
 ## 快速上手
 
+### 安装前置库
+
+- [Custom Damage](https://www.mcmod.cn/class/8873.html)
+
+### 配置
 目前提供了3个可自定义的参数：
 
 枪械可自定义的NBT
