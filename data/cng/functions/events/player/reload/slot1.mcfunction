@@ -26,7 +26,7 @@ execute if score @s cng.istrueammo matches 0 store result score @s cng.ammocount
 
 # # 得出消耗后的剩余弹药
 execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo = @s cng.ammocount
-execute if score @s cng.istrueammo matches 0 unless score @s cng.needammo2 matches 0.. run scoreboard players operation @s cng.surplusammo -= @s cng.needammo
+execute if score @s cng.istrueammo matches 0 unless score @s cng.needammo2 matches 1.. run scoreboard players operation @s cng.surplusammo -= @s cng.needammo
 execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo -= @s cng.needammo2
 
 

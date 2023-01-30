@@ -11,7 +11,7 @@ execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0
 execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0].tag set from entity @s Inventory[{Slot:5b}].tag
 execute if score @s cng.istrueammo matches 0 store result score @s cng.ammocount run data get entity @s Inventory[{Slot:5b}].Count
 execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo = @s cng.ammocount
-execute if score @s cng.istrueammo matches 0 unless score @s cng.needammo2 matches 0.. run scoreboard players operation @s cng.surplusammo -= @s cng.needammo
+execute if score @s cng.istrueammo matches 0 unless score @s cng.needammo2 matches 1.. run scoreboard players operation @s cng.surplusammo -= @s cng.needammo
 execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo -= @s cng.needammo2
 execute if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot:5b}].tag.CngAmmoNBT store result block ~ 0 ~ Items[0].Count byte 1 run scoreboard players get @s cng.surplusammo
 execute if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot:5b}].tag.CngAmmoNBT run item replace entity @s container.5 from block ~ 0 ~ container.0
