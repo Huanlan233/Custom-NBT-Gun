@@ -1,11 +1,7 @@
 # Custom NBT GUN
-
-***instable!!! Don't use it!***
-
 一款自定义枪械数据包。
 
-*所有tag、计分板、命令空间均已加上cng前缀(防冲突)*
-
+所有Tag、计分板、命名空间均已加上cng前缀(防冲突)
 
 ## 快速上手
 
@@ -16,7 +12,7 @@
 ### 配置
 目前提供了3个可自定义的参数：
 
-枪械可自定义的NBT
+枪械可自定义的NBT：
 ```JSON
 "CngNBT":{
     "Damage": 100,
@@ -24,7 +20,7 @@
 }
 ```
 
-子弹可自定义的NBT
+子弹可自定义的NBT：
 ```JSON
 "CngAmmoNBT":{
     "ID": "Default"
@@ -34,17 +30,20 @@
 ## 示例
 
 给予自己一个伤害为100的枪械。
+
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100}}
 ```
 
 给予自己一个伤害为100且使用子弹ID为Default的枪械，并给予配套子弹。
+
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
 
 给予自己一个伤害为100的枪械，且不消耗子弹(如果AmmoID不存在则不消耗子弹)。
+
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
