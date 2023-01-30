@@ -36,8 +36,8 @@ execute if entity @s[tag=cng.v1] at @s run function cng:events/player/reload/slo
 
 scoreboard players reset @s cng.ammocount
 
-execute as @a store result score @s cng.maxammo run data get entity @s SelectedItem.tag.CngNBT.MaxAmmo
-execute as @a store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
+execute store result score @s cng.maxammo run data get entity @s SelectedItem.tag.CngNBT.MaxAmmo
+execute store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
 scoreboard players operation @s cng.needammo = @s cng.maxammo
 scoreboard players operation @s cng.needammo -= @s cng.haveammo
 

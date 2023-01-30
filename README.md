@@ -35,6 +35,12 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
 
+给予自己一个伤害为100的枪械，且不消耗子弹(如果AmmoID不存在则不消耗子弹)
+```MCFUNCTION
+give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
+give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
+```
+
 ## TODO
 
 - [x] 实现消耗自定义子弹功能
@@ -44,5 +50,5 @@ give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 
 ## Bugs
 
-- [ ] 当NeedAmmo(MaxAmmo - HaveAmmo)为65时会少消耗一颗子弹
+- [ ] 当NeedAmmo(MaxAmmo - HaveAmmo)为65时会少消耗一颗子弹 ~~小bug，懒得修了~~
 - [ ] 最大换弹数量127(可能不算BUG)

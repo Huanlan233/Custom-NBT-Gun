@@ -8,4 +8,4 @@ execute as @a[tag=cng.reloading] run function cng:events/player/reload
 # TODO: Q换弹
 
 # 召唤子弹
-execute as @a[tag=cng.gun_used] run function cng:events/player/bullet_summon
+execute as @a[tag=cng.gun_used] at @s run function cng:events/player/bullet_summon

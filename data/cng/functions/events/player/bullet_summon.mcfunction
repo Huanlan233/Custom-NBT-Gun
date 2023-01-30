@@ -1,2 +1,17 @@
+# 获取弹匣内子弹数量
+execute if data entity @s SelectedItem.tag.CngNBT.AmmoID store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
+execute if score @s cng.haveammo matches 1.. run tag @s add cng.haveammo
 # 召唤箭矢，CustomPotionEffects中的幸运(Id:26b)效果负责检测中箭，速度(Id:1b)效果负责存储伤害数量
-execute at @s positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags:["cng.bullet_not_fired"],damage:0.0001d,CustomPotionEffects:[{Id:14b,Amplifier:1b,Duration:20},{Id:1b,Amplifier:1b,Duration:0}]}
+execute if entity @s[tag=cng.haveammo] positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags:["cng.bullet_not_fired"],damage:0.0001d,CustomPotionEffects:[{Id:14b,Amplifier:1b,Duration:20},{Id:1b,Amplifier:1b,Duration:0}]}
+execute unless data entity @s SelectedItem.tag.CngNBT.AmmoID positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags:["cng.bullet_not_fired"],damage:0.0001d,CustomPotionEffects:[{Id:14b,Amplifier:1b,Duration:20},{Id:1b,Amplifier:1b,Duration:0}]}
+# 弹匣内子弹数量减一
+execute if entity @s[tag=cng.haveammo] run setblock ~ 0 ~ shulker_box{Items:[{id:"carrot_on_a_stick",Count:1b}]}
+data modify block ~ 0 ~ Items[0].id set from entity @s SelectedItem.id
+data modify block ~ 0 ~ Items[0].tag set from entity @s SelectedItem.tag
+data modify block ~ 0 ~ Items[0].Count set from entity @s SelectedItem.Count
+execute store result block ~ 0 ~ Items[0].tag.CngNBT.HaveAmmo byte 1 run scoreboard players operation @s cng.haveammo -= #1 cng.constant
+item replace entity @s weapon.mainhand from block ~ 0 ~ container.0
+
+setblock ~ 0 ~ bedrock
+scoreboard players reset @s cng.haveammo
+tag @s remove cng.haveammo
