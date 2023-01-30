@@ -42,13 +42,6 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
 
-给予自己一个伤害为100的枪械，且不消耗子弹(如果AmmoID不存在则不消耗子弹)(目前有bug)。
-
-```MCFUNCTION
-give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
-give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
-```
-
 ## TODO
 
 - [x] 实现消耗自定义子弹功能
