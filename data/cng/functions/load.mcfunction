@@ -40,5 +40,6 @@ scoreboard objectives add cng.surplusammo dummy
 scoreboard objectives add cng.constant dummy
 scoreboard players set #15000 cng.constant 15000
 scoreboard players set #100 cng.constant 100
+scoreboard players set #50 cng.constant 50
 scoreboard players set #1 cng.constant 1
 scoreboard players set #-1 cng.constant -1
