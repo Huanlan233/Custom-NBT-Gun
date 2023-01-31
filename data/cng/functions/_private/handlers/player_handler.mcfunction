@@ -7,8 +7,11 @@ execute as @a if data entity @s Inventory[{Slot:-106b}].tag.CngNBT run tag @s ad
 execute as @a[tag=cng.reloading] run function cng:_private/events/player/reload
 # TODO: Q换弹
 
-# 后坐力
-execute as @a[tag=cng.gun_used] at @s run function cng:_private/events/player/recoil
-
 # 召唤子弹
 execute as @a[tag=cng.gun_used] at @s run function cng:_private/events/player/bullet_summon
+
+# 后坐力
+# X是往上或者往下
+# Y是水平 (去你的Mojang搞这么难记)
+execute as @a[tag=cng.gun_used] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.Y run function cng:_private/events/player/recoil_y
+execute as @a[tag=cng.gun_used] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.X run function cng:_private/events/player/recoil_x

@@ -10,13 +10,19 @@
 - [Custom Damage](https://www.mcmod.cn/class/8873.html)
 
 ### 配置
-目前提供了3个可自定义的参数：
+目前提供了7个可自定义的参数：
 
 枪械可自定义的NBT：
 ```JSON
 "CngNBT":{
-    "Damage": 100,
-    "AmmoID": "Default"
+    "Damage": <Int>,
+    "AmmoID": <Any>,
+    "Recoil": {
+        "X": <Float>,
+        "X_Offset": <Float>,
+        "Y": <Float>,
+        "Y_Offset": <Float>
+    }
 }
 ```
 
@@ -29,7 +35,7 @@
 
 ## 示例
 
-给予自己一个伤害为100的枪械。
+给予自己一个伤害为100的枪械(如果MaxAmmo不存在则不消耗子弹)。
 
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100}}
@@ -40,6 +46,11 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100}}
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
+```
+
+给予自己水平后坐力为50，水平后坐力偏移度为10，垂直后坐力为100，垂直后坐力偏移度为40且伤害为100的枪械
+```MCFUNCTION
+give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Offest:40}}}
 ```
 
 ## TODO

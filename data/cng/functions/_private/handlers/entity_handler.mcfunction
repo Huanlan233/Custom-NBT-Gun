@@ -1,5 +1,5 @@
 # 发射子弹
-execute as @e[tag=cng.bullet_not_fired] run function cng:_private/events/entity/bullet_launch
+execute as @e[tag=cng.bullet_not_fired] at @s run function cng:_private/events/entity/bullet_launch
 
 # 受伤
 execute as @e store result score @s cng.hurttime run data get entity @s HurtTime
