@@ -29,7 +29,7 @@
 子弹可自定义的NBT：
 ```JSON
 "CngAmmoNBT":{
-    "ID": "Default"
+    "ID": <String>
 }
 ```
 
