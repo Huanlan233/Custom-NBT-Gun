@@ -76,5 +76,5 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Of
 
 ## Bugs
 
-- [ ] 当NeedAmmo(MaxAmmo - HaveAmmo)为65时会少消耗一颗子弹 ~~小bug，懒得修了~~
+- [ ] 当换弹所需数量为65时会少消耗一颗子弹 ~~小bug，懒得修了~~
 - [ ] 最大换弹数量127(可能不算BUG)
