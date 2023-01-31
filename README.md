@@ -68,9 +68,10 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Of
 ## TODO
 
 - [x] 实现消耗自定义子弹功能
-- [x] 实现换弹功能
+- [x] 实现F换弹功能
+- [ ] 实现Q换弹功能
+- [ ] Q/F换弹切换功能
 - [x] 自定义后坐力
-- [ ] 无间隔攻击(取消无敌帧)
 - [ ] More...
 
 ## Bugs
