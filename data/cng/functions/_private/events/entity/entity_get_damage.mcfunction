@@ -1,4 +1,4 @@
-execute store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id: 1b}].Duration 100
+execute store result score @s cng.get_damage run data get entity @s ActiveEffects[{Id: 20b}].Duration 100
 scoreboard players operation @s cng.get_damage -= #100 cng.constant
 # 中弹自定义事件
 execute at @s run function #cng:damage_get
