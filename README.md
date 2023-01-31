@@ -39,7 +39,8 @@
 目前开放了2个接口：
 
 - bullet_die 子弹清除前事件
-- damage_get 受伤事件
+- damage_get_before 受伤前事件
+- damage_get_after 受伤后前事件
 
 你可以将自己的函数添加进这两个tag，在相关函数执行时会调用
 
@@ -69,6 +70,7 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Of
 - [x] 实现消耗自定义子弹功能
 - [x] 实现换弹功能
 - [x] 自定义后坐力
+- [ ] 无间隔攻击(取消无敌帧)
 - [ ] More...
 
 ## Bugs
