@@ -18,10 +18,10 @@
     "Damage": <Int>,
     "AmmoID": <Any>,
     "Recoil": {
-        "X": <Float>,
-        "X_Offset": <Float>,
-        "Y": <Float>,
-        "Y_Offset": <Float>
+        "X": <Int>,
+        "X_Offset": <Int>,
+        "Y": <Int>,
+        "Y_Offset": <Int>
     }
 }
 ```
