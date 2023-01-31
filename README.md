@@ -49,6 +49,7 @@ give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
 
 给予自己水平后坐力为50，水平后坐力偏移度为10，垂直后坐力为100，垂直后坐力偏移度为40且伤害为100的枪械
+
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Offest:40}}}
 ```
@@ -57,7 +58,7 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Of
 
 - [x] 实现消耗自定义子弹功能
 - [x] 实现换弹功能
-- [ ] 自定义后坐力
+- [x] 自定义后坐力
 - [ ] More...
 
 ## Bugs
