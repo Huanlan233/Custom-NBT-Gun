@@ -13,5 +13,9 @@ execute as @a[tag=cng.gun_used] at @s run function cng:_private/events/player/bu
 # 后坐力
 # X是往上或者往下
 # Y是水平 (去你的Mojang搞这么难记)
-execute as @a[tag=cng.gun_used] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.Y run function cng:_private/events/player/recoil_y
-execute as @a[tag=cng.gun_used] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.X run function cng:_private/events/player/recoil_x
+execute as @a[tag=cng.gun_used] if data entity @s SelectedItem.tag.CngNBT.MaxAmmo store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
+execute as @a[tag=cng.gun_used] if score @s cng.haveammo matches 1.. run tag @s add cng.recoil
+execute as @a[tag=cng.gun_used] unless data entity @s SelectedItem.tag.CngNBT.MaxAmmo run tag @s add cng.recoil
+execute as @a[tag=cng.recoil] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.Y run function cng:_private/events/player/recoil_y
+execute as @a[tag=cng.recoil] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.X run function cng:_private/events/player/recoil_x
+tag @a[tag=cng.recoil] remove cng.recoil

@@ -14,14 +14,16 @@ execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s
 execute if score @s cng.istrueammo matches 0 unless score @s cng.needammo2 matches 1.. run scoreboard players operation @s cng.surplusammo -= @s cng.needammo
 execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo -= @s cng.needammo2
 execute if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT store result block ~ 0 ~ Items[0].Count byte 1 run scoreboard players get @s cng.surplusammo
-execute if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run function cng:events/player/reload/loading1
 execute if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run item replace entity @s container.15 from block ~ 0 ~ container.0
+execute if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run function cng:_private/events/player/reload/loading1
+
 execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT store result score @s cng.needammo2 run data get entity @s Inventory[{Slot: 15b}].Count
 execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run scoreboard players operation @s cng.needammo2 -= @s cng.needammo
 execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run scoreboard players operation @s cng.needammo2 *= #-1 cng.constant
 execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT store result score @s cng.ammocount2 run data get entity @s Inventory[{Slot: 15b}].Count
-execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run function cng:events/player/reload/loading2
 execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run item replace entity @s container.15 with air
+execute if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 15b}].tag.CngAmmoNBT run function cng:_private/events/player/reload/loading2
+
 execute as @s[scores={cng.istrueammo=0}] if score @s cng.surplusammo matches 0.. run tag @s remove cng.v1
 setblock ~ 0 ~ bedrock
     
