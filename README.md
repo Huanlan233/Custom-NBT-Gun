@@ -48,7 +48,7 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,AmmoID:"Default"}}
 give @s iron_nugget{CngAmmoNBT:{ID:"Default"}}
 ```
 
-给予自己水平后坐力为50，水平后坐力偏移度为10，垂直后坐力为100，垂直后坐力偏移度为40且伤害为100的枪械
+给予自己水平后坐力为50，水平后坐力偏移度为10，垂直后坐力为100，垂直后坐力偏移度为40且伤害为100的枪械(当X或Y不存在时候则没有相关后坐力)
 
 ```MCFUNCTION
 give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Offest:40}}}
