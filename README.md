@@ -40,7 +40,7 @@
 
 - bullet_die 子弹清除前事件
 - damage_get_before 受伤前事件
-- damage_get_after 受伤后前事件
+- damage_get_after 受伤后事件
 
 你可以将自己的函数添加进这两个tag，在相关函数执行时会调用
 
