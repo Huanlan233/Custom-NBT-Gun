@@ -65,4 +65,5 @@ scoreboard players set #15000 cng.constant 15000
 scoreboard players set #100 cng.constant 100
 scoreboard players set #2 cng.constant 2
 scoreboard players set #1 cng.constant 1
+scoreboard players set #0 cng.constant 0
 scoreboard players set #-1 cng.constant -1

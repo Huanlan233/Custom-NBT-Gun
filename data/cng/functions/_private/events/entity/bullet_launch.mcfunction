@@ -1,7 +1,7 @@
 # 设置Owner
 execute at @s run data modify entity @s Owner set from entity @a[limit=1,distance=..2.5,sort=nearest] UUID
 
-# 设置速度效果秒数为伤害
+# 设置伤害
 execute at @s store result entity @s CustomPotionEffects[{Id: 20b}].Duration int 1 run data get entity @a[limit=1,distance=..2.5,sort=nearest] SelectedItem.tag.CngNBT.Damage
 
 # 动量

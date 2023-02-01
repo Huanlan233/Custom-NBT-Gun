@@ -2,8 +2,8 @@
 execute if data entity @s SelectedItem.tag.CngNBT.AmmoID store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
 execute if score @s cng.haveammo matches 1.. run tag @s add cng.haveammo
 # 召唤箭矢
-execute if entity @s[tag=cng.haveammo] positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags: ["cng.bullet_not_fired"], damage: 0.0001d, CustomPotionEffects: [{Id: 24b, Amplifier: 1b, Duration: 0}, {Id: 20b, Amplifier: 0b, Duration: 10}]}
-execute unless data entity @s SelectedItem.tag.CngNBT.MaxAmmo positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags: ["cng.bullet_not_fired"], damage: 0.0001d, CustomPotionEffects: [{Id: 24b, Amplifier: 1b, Duration: 0}, {Id: 20b, Amplifier: 0b, Duration: 10}]}
+execute if entity @s[tag=cng.haveammo] positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags: ["cng.bullet_not_fired"], damage: 0.0001d, CustomPotionEffects: [{Id: 24b, Amplifier: 1b, Duration: 0}, {Id: 20b, Amplifier: 2b, Duration: 10}]}
+execute unless data entity @s SelectedItem.tag.CngNBT.MaxAmmo positioned ~ ~1.5 ~ run summon arrow ^ ^ ^0.1 {Tags: ["cng.bullet_not_fired"], damage: 0.0001d, CustomPotionEffects: [{Id: 24b, Amplifier: 1b, Duration: 0}, {Id: 20b, Amplifier: 2b, Duration: 10}]}
 # 弹匣内子弹数量减一
 execute if entity @s[tag=cng.haveammo] run setblock ~ 0 ~ shulker_box{Items: [{id: "carrot_on_a_stick", Count: 1b}]}
 data modify block ~ 0 ~ Items[0].id set from entity @s SelectedItem.id
