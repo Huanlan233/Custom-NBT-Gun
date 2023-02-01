@@ -4,7 +4,7 @@ execute as @a[scores={cng.used=1..}] if score @s cng.isgun matches 1.. run tag @
 
 # F换弹
 execute as @a if data entity @s Inventory[{Slot:-106b}].tag.CngNBT run tag @s add cng.reloading
-execute as @a[tag=cng.reloading] run function cng:_private/events/player/reload
+execute as @a[tag=cng.reloading] at @s run function cng:_private/events/player/reload
 # TODO: Q换弹
 
 # 召唤子弹

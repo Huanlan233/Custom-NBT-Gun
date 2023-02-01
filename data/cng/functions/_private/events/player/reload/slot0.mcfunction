@@ -1,47 +1,57 @@
-scoreboard players reset @s cng.ammocount2
-execute as @a store result score @s cng.maxammo run data get entity @s SelectedItem.tag.CngNBT.MaxAmmo
-execute as @a store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
+# 放置容器
+setblock ~ 0 ~ shulker_box{Items: [{Count: 1, id: "stone", tag: {CngAmmoNBT: {ID: "Default"}}}]}
+
+# 将SelectedItem.tag.CngNBT.AmmoID存储到Items[0]
+data modify block ~ 0 ~ Items[0].tag.CngAmmoNBT.ID set from entity @s SelectedItem.tag.CngNBT.AmmoID
+
+# 用data modify判断是否为正确ID
+execute if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT store success score @s cng.istrueammo run data modify block ~ 0 ~ Items[0].tag.CngAmmoNBT.ID set from entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT.ID
+
+## 是(0)
+###  将Inventory[{Slot:1b}].tag、id、Count存储到Items[0]
+execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0].tag set from entity @s Inventory[{Slot: 0b}].tag
+execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0].Count set from entity @s Inventory[{Slot: 0b}].Count
+execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0].id set from entity @s Inventory[{Slot: 0b}].id
+
+### 存储Items[0].Count到cng.ammocount
+execute if score @s cng.istrueammo matches 0 store result score @s cng.ammocount run data get block ~ 0 ~ Items[0].Count
+
+### 获取SelectedItem.tag.CngNBT.MaxAmmo和HaveAmmo并分别存储到cng.maxammo和cng.haveammo
+execute store result score @s cng.maxammo run data get entity @s SelectedItem.tag.CngNBT.MaxAmmo
+execute store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
+
+### 存储maxammo - haveammo的结果到cng.needammo
 scoreboard players operation @s cng.needammo = @s cng.maxammo
 scoreboard players operation @s cng.needammo -= @s cng.haveammo
 
-# 放置容器
-setblock ~ 0 ~ shulker_box{Items: [{Slot: 0b, id: "stone", Count: 1, tag: {CngAmmoNBT: {ID: "Default"}}}]}
+### 判断是否cng.ammocount >= cng.needammo
+execute if score @s cng.istrueammo matches 0 if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT if score @s cng.ammocount < @s cng.needammo run tag @s add cng.ammocountR0
+execute if score @s cng.istrueammo matches 0 if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT if score @s cng.ammocount >= @s cng.needammo run tag @s add cng.ammocountR1
 
-# 将ID改为枪械所需子弹ID
-data modify block ~ 0 ~ Items[0].tag.CngAmmoNBT.ID set from entity @s SelectedItem.tag.CngNBT.AmmoID
+#### 是
+##### 存储cng.ammocount - cng.need的结果到Items[0].Count
+execute if entity @s[tag=cng.ammocountR1] store result block ~ 0 ~ Items[0].Count int 1 run scoreboard players operation @s cng.ammocount -= @s cng.needammo
 
-# data modify上去，如果返回0则为正确ID，返回1则为错误ID
-execute if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT store success score @s cng.istrueammo run data modify block ~ 0 ~ Items[0].tag.CngAmmoNBT.ID set from entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT.ID
+##### item replace替换
+execute if entity @s[tag=cng.ammocountR1] run item replace entity @s container.0 from block ~ 0 ~ container.0
 
-# 如果为1则替换回来
-execute if score @s cng.istrueammo matches 1.. run data modify block ~ 0 ~ Items[0].tag.CngAmmoNBT.ID set from entity @s SelectedItem.tag.CngNBT.AmmoID
+##### 更新手中枪械
+execute if entity @s[tag=cng.ammocountR1] run function cng:_private/events/player/reload/loading1
 
-# 如果为0则减少子弹数量
+#### 否
+##### 让cng.ammocount += cng.haveammo
+execute if entity @s[tag=cng.ammocountR0] run scoreboard players operation @s cng.ammocount += @s cng.haveammo
 
-# # 替换id和tag
-execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0].id set from entity @s Inventory[{Slot: 0b}].id
-execute if score @s cng.istrueammo matches 0 run data modify block ~ 0 ~ Items[0].tag set from entity @s Inventory[{Slot: 0b}].tag
+##### item replace替换
+execute if entity @s[tag=cng.ammocountR0] run item replace entity @s container.0 with air
 
-# # 获取Count
-execute if score @s cng.istrueammo matches 0 store result score @s cng.ammocount run data get entity @s Inventory[{Slot: 0b}].Count
+##### 更新手中枪械
+execute if entity @s[tag=cng.ammocountR0] run function cng:_private/events/player/reload/loading2
 
-# # 得出消耗后的剩余弹药
-execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo = @s cng.ammocount
-execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s cng.surplusammo -= @s cng.needammo
+# 
+tag @s remove cng.istrueammo
+tag @s remove cng.ammocountR0
+tag @s remove cng.ammocountR1
+tag @s remove cng.nohaveammo
 
-# # # 如果剩余弹药surplusammo>=0
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo >= #0 cng.constant store result block ~ 0 ~ Items[0].Count byte 1 run scoreboard players get @s cng.surplusammo
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo >= #0 cng.constant run item replace entity @s container.0 from block ~ 0 ~ container.0
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo >= #0 cng.constant run function cng:_private/events/player/reload/loading1
-
-# # # 如果剩余弹药surplusammo<0
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo < #0 cng.constant if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT store result score @s cng.ammocount2 run data get entity @s Inventory[{Slot: 0b}].Count
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo < #0 cng.constant if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT store result score @s cng.needammo2 run data get entity @s Inventory[{Slot: 0b}].Count
-
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo < #0 cng.constant run scoreboard players operation @s cng.needammo2 -= @s cng.needammo
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo < #0 cng.constant run scoreboard players operation @s cng.needammo2 *= #-1 cng.constant
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo < #0 cng.constant run item replace entity @s container.0 with air
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo < #0 cng.constant run function cng:_private/events/player/reload/loading2
-
-execute as @s[scores={cng.istrueammo=0}] if score @s cng.istrueammo matches 0 if score @s cng.surplusammo matches 0.. run tag @s remove cng.v1
 setblock ~ 0 ~ bedrock
