@@ -33,5 +33,7 @@ execute if entity @s[tag=cng.v1] at @s run function cng:_private/events/player/r
 execute if entity @s[tag=cng.v1] at @s run function cng:_private/events/player/reload/slot26
 execute if entity @s[tag=cng.v1] at @s run function cng:_private/events/player/reload/slot27
 
+scoreboard players reset @s cng.needammo2
+
 scoreboard players reset @s cng.ammocount
 tag @s remove cng.reloading

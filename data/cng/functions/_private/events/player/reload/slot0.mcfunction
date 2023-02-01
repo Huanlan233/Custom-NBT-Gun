@@ -1,4 +1,3 @@
-scoreboard players reset @s cng.needammo2
 execute as @a store result score @s cng.maxammo run data get entity @s SelectedItem.tag.CngNBT.MaxAmmo
 execute as @a store result score @s cng.haveammo run data get entity @s SelectedItem.tag.CngNBT.HaveAmmo
 scoreboard players operation @s cng.needammo = @s cng.maxammo
@@ -32,9 +31,8 @@ execute if score @s cng.istrueammo matches 0 run scoreboard players operation @s
 
 # # # 如果剩余弹药surplusammo>=0
 execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT store result block ~ 0 ~ Items[0].Count byte 1 run scoreboard players get @s cng.surplusammo
-execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT run function cng:_private/events/player/reload/loading1
 execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT run item replace entity @s container.0 from block ~ 0 ~ container.0
-
+execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo matches 0.. if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT run function cng:_private/events/player/reload/loading1
 
 # # # 如果剩余弹药surplusammo<0
 execute if score @s cng.istrueammo matches 0 if score @s cng.surplusammo matches ..-1 if data entity @s Inventory[{Slot: 0b}].tag.CngAmmoNBT store result score @s cng.ammocount2 run data get entity @s Inventory[{Slot: 0b}].Count
