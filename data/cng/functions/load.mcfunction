@@ -55,6 +55,9 @@ scoreboard objectives add cng.xo_recoil dummy
 # Random
 scoreboard objectives add cng.random dummy
 
+# Cooldown
+scoreboard objectives add cng.cooldown dummy
+
 # Constant 常数
 scoreboard objectives add cng.constant dummy
 scoreboard players set #15000 cng.constant 15000

@@ -7,8 +7,5 @@ execute as @e[tag=cng.bullet] at @s run function #cng:bullet_die
 # 清除已经落地的子弹
 kill @e[nbt={inGround:1b},tag=cng.bullet]
 
-# Scoreboard
 scoreboard players reset @e cng.used
-# Tags
 tag @e remove cng.gun_used
-tag @e remove cng.be_hit

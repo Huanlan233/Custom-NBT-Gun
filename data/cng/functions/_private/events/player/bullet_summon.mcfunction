@@ -15,4 +15,3 @@ item replace entity @s weapon.mainhand from block ~ 0 ~ container.0
 setblock ~ 0 ~ bedrock
 scoreboard players reset @s cng.haveammo
 tag @s remove cng.haveammo
-
