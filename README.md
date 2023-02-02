@@ -41,9 +41,10 @@
 
 目前开放了以下接口：
 
-- bullet_die 子弹清除前事件
-- damage_get_before 受伤前事件
-- damage_get_after 受伤后事件
+1. bullet_die 子弹清除前事件
+2. damage_get_before 受伤前事件
+3. damage_get_after 受伤后事件
+4. reloading_slot 换弹栏位，如果想添加更多支持的栏位可以将换弹函数加入其中
 
 你可以将自己的函数添加进这些tag，在相关函数执行时会调用
 
@@ -75,6 +76,8 @@ give @s carrot_on_a_stick{CngNBT:{Damage:100,Recoil:{X:50,X_Offest:10,Y:100,Y_Of
 - [ ] 实现Q换弹功能
 - [ ] Q/F换弹切换功能
 - [x] 自定义后坐力
+- [ ] 自定义换弹时间(在换弹期间不许射射)
+- [ ] 自定义射击间隔
 - [ ] More...
 
 ## Bugs

@@ -38,5 +38,6 @@ function cng:_private/events/player/reload/slot32
 function cng:_private/events/player/reload/slot33
 function cng:_private/events/player/reload/slot34
 function cng:_private/events/player/reload/slot35
+function #cng:reloading_slot
 
 tag @s remove cng.reloading
