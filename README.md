@@ -20,6 +20,7 @@
 ```JSON
 "CngNBT":{
     "Damage": <Int>,
+    "MaxAmmo": <Int>,
     "AmmoID": <Any>,
     "Recoil": {
         "X": <Int>,
