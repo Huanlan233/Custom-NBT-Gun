@@ -1,0 +1,2 @@
+# 召唤箭矢
+summon arrow ^ ^ ^0.1 {Tags: ["cng.bullet_not_fired", "cng.bullet"], damage: 0.0001d, CustomPotionEffects: [{Id: 24b, Amplifier: 0b, Duration: 0}, {Id: 19b, Amplifier: 1b, Duration: 2}], NoGravity: 0}
