@@ -4,5 +4,7 @@ execute store result score @s cng.haveammo run data get entity @s SelectedItem.t
 execute if score @s cng.haveammo matches 1.. run tag @s add cng.shoot
 execute unless data entity @s SelectedItem.tag.CngNBT.MaxAmmo run tag @s add cng.shoot
 
+function #cng:player/shoot
+
 # 射击冷却
 execute store result score @s cng.cooldown run data get entity @s SelectedItem.tag.CngNBT.FiringInterval

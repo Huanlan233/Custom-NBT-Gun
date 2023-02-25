@@ -7,7 +7,6 @@ execute store result score @s cng.haveammo run data get entity @s SelectedItem.t
 execute store result score @s cng.maxammo run data get entity @s SelectedItem.tag.CngNBT.MaxAmmo
 execute unless score @s cng.haveammo = @s cng.maxammo store result score @s cng.cooldown run data get entity @s SelectedItem.tag.CngNBT.LoadingTime
 
-
-function #cng:reload_slot
+function #cng:player/reload_slot
 
 tag @a[tag=cng.reloading] remove cng.reloading
