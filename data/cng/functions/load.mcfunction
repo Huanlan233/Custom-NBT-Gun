@@ -1,65 +1,57 @@
 tellraw @a {"text": "[Custom NBT Gun] 已加载。"}
 
 
-# Used 枪使用检测
-scoreboard objectives add cng.used used:carrot_on_a_stick
+# 枪使用检测
+scoreboard objectives add cng.used used:carrot_on_a_stick "枪使用检测"
 
-# GetDamage 实体受到的伤害
-scoreboard objectives add cng.get_damage dummy
+# 实体受到的伤害
+scoreboard objectives add cng.get_damage dummy "实体受到的伤害"
 
-# BeHit 检测是否中弹
-scoreboard objectives add cng.be_hit dummy
+# 中弹检测
+scoreboard objectives add cng.be_hit dummy "中弹检测"
 
-# HurtTime 受到伤害
-scoreboard objectives add cng.hurttime dummy
+# HurtTime
+scoreboard objectives add cng.hurttime dummy "HurtTime"
 
-# Position 坐标
-scoreboard objectives add cng.posx dummy
-scoreboard objectives add cng.posy dummy
-scoreboard objectives add cng.posz dummy
+# 坐标
+scoreboard objectives add cng.posx dummy "坐标X"
+scoreboard objectives add cng.posy dummy "坐标Y"
+scoreboard objectives add cng.posz dummy "坐标Z"
 
-# Vector 向量
-scoreboard objectives add cng.vecx dummy
-scoreboard objectives add cng.vecy dummy
-scoreboard objectives add cng.vecz dummy
+# 向量
+scoreboard objectives add cng.vecx dummy "向量X"
+scoreboard objectives add cng.vecy dummy "向量Y"
+scoreboard objectives add cng.vecz dummy "向量Z"
 
-# SlotAmmoCount 栏位子弹数量
-scoreboard objectives add cng.ammocount dummy
+# 子弹
+scoreboard objectives add cng.ammocount dummy "当前栏位弹药数量"
+scoreboard objectives add cng.needammo dummy "所需弹药数量"
+scoreboard objectives add cng.maxammo dummy "最大弹药数量"
+scoreboard objectives add cng.haveammo dummy "弹匣内弹药数量"
+scoreboard objectives add cng.istrueammo dummy "弹药ID检测"
 
-# NeedAmmo
-scoreboard objectives add cng.needammo dummy
-# MaxAmmo
-scoreboard objectives add cng.maxammo dummy
-# HaveAmmo
-scoreboard objectives add cng.haveammo dummy
-# IsTrueAmmo
-scoreboard objectives add cng.istrueammo dummy
+# 角度X
+scoreboard objectives add cng.rotx dummy "角度X"
+# 角度Y
+scoreboard objectives add cng.roty dummy "角度Y"
 
-# RotX
-scoreboard objectives add cng.rotx dummy
-#RotY
-scoreboard objectives add cng.roty dummy
+# 偏航角后坐力 
+scoreboard objectives add cng.y_recoil dummy "Y后坐力"
+# 偏航角后坐力偏移度
+scoreboard objectives add cng.yo_recoil dummy "Y后坐力偏移度"
+# 俯仰角后坐力 
+scoreboard objectives add cng.x_recoil dummy "X后坐力"
+# 俯仰角后坐力偏移度
+scoreboard objectives add cng.xo_recoil dummy "X后坐力偏移度"
 
-# Y Recoil 偏航角后坐力 
-scoreboard objectives add cng.y_recoil dummy
-# Y Recoil Offset 偏航角偏移度
-scoreboard objectives add cng.yo_recoil dummy
-# X Recoil 俯仰角后坐力 
-scoreboard objectives add cng.x_recoil dummy
-# X Recoil Offset 俯仰角偏移度
-scoreboard objectives add cng.xo_recoil dummy
+# 冷却
+scoreboard objectives add cng.cooldown dummy "冷却"
 
-# Random
-scoreboard objectives add cng.random dummy
+# 下坠
+scoreboard objectives add cng.drop dummy "下坠"
 
-# Cooldown
-scoreboard objectives add cng.cooldown dummy
-
-# Constant 常数
-scoreboard objectives add cng.constant dummy
-scoreboard players set #15000 cng.constant 15000
+# 常数
+scoreboard objectives add cng.constant dummy "常数"
 scoreboard players set #100 cng.constant 100
 scoreboard players set #2 cng.constant 2
-scoreboard players set #1 cng.constant 1
-scoreboard players set #0 cng.constant 0
 scoreboard players set #-1 cng.constant -1

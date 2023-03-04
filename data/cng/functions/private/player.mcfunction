@@ -9,7 +9,7 @@ execute as @a[tag=cng.shoot] at @s if data entity @s SelectedItem.tag.CngNBT.Rec
 execute as @a[tag=cng.shoot] at @s if data entity @s SelectedItem.tag.CngNBT.Recoil.Y run function cng:private/player/recoil/y
 
 # 弹药消耗
-execute as @a[tag=cng.shoot] at @s run function cng:private/player/shoot/ammo_cost
+execute as @a[tag=cng.shoot] at @s if data entity @s SelectedItem.tag.CngNBT.MaxAmmo run function cng:private/player/shoot/ammo_cost
 
 # 换弹
 execute as @a if data entity @s Inventory[{Slot: -106b}].tag.CngNBT run tag @s add cng.reloading

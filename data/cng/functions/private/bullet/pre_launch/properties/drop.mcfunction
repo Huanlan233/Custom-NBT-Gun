@@ -1,0 +1,1 @@
+execute store result score @s cng.drop run data get entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Drop 100
