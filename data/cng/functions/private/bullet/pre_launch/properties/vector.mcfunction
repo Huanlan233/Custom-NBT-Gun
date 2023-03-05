@@ -1,4 +1,3 @@
-# 动量
 execute as @e store result score @s cng.posx run data get entity @s Pos[0] 10000
 execute as @e store result score @s cng.posy run data get entity @s Pos[1] 10000
 execute as @e store result score @s cng.posz run data get entity @s Pos[2] 10000

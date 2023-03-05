@@ -1,6 +1,5 @@
 tellraw @a {"text": "[Custom NBT Gun] 已加载。"}
 
-
 # 枪使用检测
 scoreboard objectives add cng.used used:carrot_on_a_stick "枪使用检测"
 
@@ -49,6 +48,9 @@ scoreboard objectives add cng.cooldown dummy "冷却"
 
 # 下坠
 scoreboard objectives add cng.drop dummy "下坠"
+
+# 穿透
+scoreboard objectives add cng.pierce dummy "穿透次数"
 
 # 常数
 scoreboard objectives add cng.constant dummy "常数"
