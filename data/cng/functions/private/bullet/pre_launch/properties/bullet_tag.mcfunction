@@ -1,0 +1,1 @@
+data modify entity @s Tags[] append from entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.AmmoID
