@@ -4,7 +4,7 @@ tellraw @a {"text": "[Custom NBT Gun] 已加载。"}
 scoreboard objectives add cng.used used:carrot_on_a_stick "枪使用检测"
 
 # 实体受到的伤害
-scoreboard objectives add cng.get_damage dummy "实体受到的伤害"
+scoreboard objectives add cng.damage dummy "实体受到的伤害"
 
 # 中弹检测
 scoreboard objectives add cng.be_hit dummy "中弹检测"

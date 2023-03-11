@@ -1,7 +1,7 @@
 tellraw @a {"text": "[Custom NBT Gun] 已卸载，请及时删除数据包文件。"}
 
 scoreboard objectives remove cng.used
-scoreboard objectives remove cng.get_damage
+scoreboard objectives remove cng.damage
 scoreboard objectives remove cng.be_hit
 scoreboard objectives remove cng.hurttime
 scoreboard objectives remove cng.posx
