@@ -1,2 +1,2 @@
 execute if data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.AmmoID run data modify entity @s Tags[] append from entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.AmmoID
-execute unless data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.AmmoID run data modify entity @s Tags[] append value "Default"
+execute unless data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.AmmoID run tag @s add Default
