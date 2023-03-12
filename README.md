@@ -1,7 +1,5 @@
 # Custom NBT GUN
 
-**测试版本，更新很快，目前尝个鲜就行**
-
 文档见[MCMOD](https://www.mcmod.cn/class/9127.html)
 
 ## TODO
