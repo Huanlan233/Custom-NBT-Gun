@@ -1,0 +1,2 @@
+execute if data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Pierce.Base store result score @s cng.pierce run data get entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Pierce.Base
+execute unless data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Pierce.Base store result score @s cng.pierce run data get entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Pierce

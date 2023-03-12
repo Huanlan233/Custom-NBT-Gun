@@ -1,4 +1,4 @@
-execute store result score @s cng.damage run data get entity @s ActiveEffects[{Id: 19b}].Duration 100
+execute store result score @s cng.damage run data get entity @s ActiveEffects[{Id: 19b}].Duration 10
 scoreboard players remove @s cng.damage 100
 
 function #cng:entity/damage_get_before
