@@ -1,0 +1,2 @@
+execute unless data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Drop.Base.Base if data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Drop.Base store result score @s cng.drop run data get entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Drop 100
+execute if data entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Drop.Base.Base store result score @s cng.drop run data get entity @a[limit=1,sort=nearest] SelectedItem.tag.CngNBT.Drop.Base 100
