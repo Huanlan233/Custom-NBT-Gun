@@ -1,41 +1,5 @@
 {
     "values": [
-        "cng:private/player/reload/slot/slot0",
-        "cng:private/player/reload/slot/slot1",
-        "cng:private/player/reload/slot/slot2",
-        "cng:private/player/reload/slot/slot3",
-        "cng:private/player/reload/slot/slot4",
-        "cng:private/player/reload/slot/slot5",
-        "cng:private/player/reload/slot/slot6",
-        "cng:private/player/reload/slot/slot7",
-        "cng:private/player/reload/slot/slot8",
-        "cng:private/player/reload/slot/slot9",
-        "cng:private/player/reload/slot/slot10",
-        "cng:private/player/reload/slot/slot11",
-        "cng:private/player/reload/slot/slot12",
-        "cng:private/player/reload/slot/slot13",
-        "cng:private/player/reload/slot/slot14",
-        "cng:private/player/reload/slot/slot15",
-        "cng:private/player/reload/slot/slot16",
-        "cng:private/player/reload/slot/slot17",
-        "cng:private/player/reload/slot/slot18",
-        "cng:private/player/reload/slot/slot19",
-        "cng:private/player/reload/slot/slot20",
-        "cng:private/player/reload/slot/slot21",
-        "cng:private/player/reload/slot/slot22",
-        "cng:private/player/reload/slot/slot23",
-        "cng:private/player/reload/slot/slot24",
-        "cng:private/player/reload/slot/slot25",
-        "cng:private/player/reload/slot/slot26",
-        "cng:private/player/reload/slot/slot27",
-        "cng:private/player/reload/slot/slot28",
-        "cng:private/player/reload/slot/slot29",
-        "cng:private/player/reload/slot/slot30",
-        "cng:private/player/reload/slot/slot31",
-        "cng:private/player/reload/slot/slot32",
-        "cng:private/player/reload/slot/slot33",
-        "cng:private/player/reload/slot/slot34",
-        "cng:private/player/reload/slot/slot35"
-
+        
     ]
 }
